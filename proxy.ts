@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { AUTH_COOKIE_NAME } from "@/app/types/index";
 
 export function proxy(request: NextRequest) {
-    const token = request.cookies.get('auth-token')?.value;
+    const token = request.cookies.get(AUTH_COOKIE_NAME)?.value;
     const { pathname } = request.nextUrl;
 
     // If trying to access /dashboard without a token

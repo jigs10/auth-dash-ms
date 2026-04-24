@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
+import { AUTH_COOKIE_NAME } from "@/app/types/index";
 
 /**
  * Hardcoded credentials.
@@ -8,6 +9,8 @@ const VALID_CREDENTIALS = {
     email: "admin@example.com",
     password: "password123",
 };
+
+const AUTH_TOKEN = process.env.AUTH_SESSION_SECRET || "session_token_2026_dev_mock";
 
 export async function POST(request: Request) {
     try {
@@ -24,12 +27,10 @@ export async function POST(request: Request) {
 
         // Mock Authentication Check
         if (email === VALID_CREDENTIALS.email && password === VALID_CREDENTIALS.password) {
-            // Dummy token string
-            const AUTH_TOKEN = "session_token_next_auth_dash_ms_2026";
 
             // Cookie
             const cookieStore = await cookies();
-            cookieStore.set("auth-token", AUTH_TOKEN, {
+            cookieStore.set(AUTH_COOKIE_NAME, AUTH_TOKEN, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === "production",
                 sameSite: "strict",

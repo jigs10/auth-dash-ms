@@ -3,3 +3,5 @@ type User = {
     name: string;
     email: string;
 };
+
+export const AUTH_COOKIE_NAME = "auth-token";
