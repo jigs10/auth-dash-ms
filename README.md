@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Auth Dash MS
 
-## Getting Started
+A modern Next.js application featuring robust authentication and a protected dashboard with a server-side data table.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🔐 Authentication
+- **Secure Login**: Validates credentials via mock API and stores sessions in HTTP-only cookies.
+- **Route Protection**: Advanced middleware implementation (using `proxy.ts`) ensures all `/dashboard` routes are protected.
+- **Auto-Redirect**: Seamlessly redirects unauthorized users to `/login` with return URL support.
+- **Logout**: Complete session termination and cookie clearing.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📊 Dashboard & Data Table
+- **Server-side Processing**: High-performance data fetching with server-side pagination, sorting, and filtering.
+- **TanStack Table v8**: Leveraging industry-standard table logic for state management.
+- **Responsive Design**: Fully mobile-responsive layout with a collapsible sidebar.
+- **Search & Filter**: Real-time server-side search across multiple fields.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🛠 Tech Stack
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Table Logic**: [TanStack Table v8](https://tanstack.com/table/v8)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Setup & Installation
 
-## Learn More
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd auth-dash-ms
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-## Deploy on Vercel
+## 📂 Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `app/api/`: Serverless API routes for auth and user data.
+- `app/(auth)/`: Authentication related pages (Login).
+- `app/(dashboard)/`: Protected dashboard pages and layout.
+- `proxy.ts`: Core middleware logic for route protection and proxying.
+- `lib/`: Shared utility functions and authentication helpers.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Coding Standards
+- **Strict TypeScript**: Ensures type safety across the entire codebase.
+- **Component-based Architecture**: Reusable UI components for tables and layouts.
+- **Clean Code**: Adherence to consistent naming conventions and modular design.
+
+---
+Built with ❤️ for Metizsoft.
+Developed by: Jignesh Zala
