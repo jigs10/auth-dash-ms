@@ -6,9 +6,11 @@ A modern Next.js application featuring robust authentication and a protected das
 
 ### 🔐 Authentication
 - **Secure Login**: Validates credentials via mock API and stores sessions in HTTP-only cookies.
-- **Route Protection**: Advanced middleware implementation (using `proxy.ts`) ensures all `/dashboard` routes are protected.
+- **Route Protection**: Advanced implementation using `proxy.ts` (following the new Next.js 16 naming convention) ensures all `/dashboard` routes are protected.
 - **Auto-Redirect**: Seamlessly redirects unauthorized users to `/login` with return URL support.
 - **Logout**: Complete session termination and cookie clearing.
+
+For a deeper dive into the architecture, see the [Project Explanation](EXPLANATION.md).
 
 ### 📊 Dashboard & Data Table
 - **Server-side Processing**: High-performance data fetching with server-side pagination, sorting, and filtering.
@@ -45,6 +47,25 @@ A modern Next.js application featuring robust authentication and a protected das
    ```bash
    npm run build
    ```
+
+## 🔐 Login Credentials
+
+To access the dashboard, use the following credentials:
+
+- **Email**: `admin@example.com`
+- **Password**: `password123`
+
+## 🚶 Step-by-Step Instructions
+
+1. **Access Login**: Open your browser and navigate to `http://localhost:3000/login`.
+2. **Enter Credentials**: Use the email and password provided above.
+3. **Explore Dashboard**: After successful login, you will be redirected to the `/dashboard`.
+4. **Interact with Table**:
+   - Use the **Search** bar to filter users by name or email.
+   - Click on **Table Headers** (ID, Name, Email) to sort data.
+   - Use the **Pagination** buttons at the bottom to navigate between pages.
+5. **Route Protection**: Try navigating directly to `/dashboard` in a private window to see the automatic redirect to login in action.
+6. **Logout**: Click the **Log out** button in the sidebar to securely end your session.
 
 ## 📂 Project Structure
 
