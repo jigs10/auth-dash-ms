@@ -9,6 +9,7 @@ import {
     SortingState,
 } from "@tanstack/react-table";
 import { ChevronUp, ChevronDown, ChevronsUpDown, Search } from "lucide-react";
+import { User } from "@/app/types";
 
 export default function UserTableContainer() {
     const [data, setData] = useState<User[]>([]);
